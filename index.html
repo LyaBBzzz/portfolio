@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Klimanov D.</title>
+    <meta name="description" content="Портфолио Дмитрия Климанова. Разработчик и дизайнер: Frontend, Backend, UI/UX, 3D.">
+    <script>document.documentElement.classList.add('js-enabled');</script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <canvas id="network-canvas"></canvas>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-pills">
+            <a href="#about" class="nav-pill">информация</a>
+            <a href="#projects" class="nav-pill">проекты</a>
+            <a href="#contact" class="nav-pill">контакты</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-title-container">
+                <h1 class="hero-title" id="typewriter-title">
+                    <span class="title-left">PORT</span>
+                    <img src="images/IMG.png" alt="3D Chrome Object" class="hero-3d-object">
+                    <span class="title-right">FOLIO</span>
+                </h1>
+            </div>
+            <div class="hero-author-card glass-panel">
+                <img src="images/photo.png" alt="Климанов Дмитрий" class="hero-author-photo">
+                <div class="hero-author-info">
+                    <h2 class="hero-author-name">Климанов Дмитрий</h2>
+                    <h3 class="hero-author-role">Разработчик</h3>
+                    <p class="hero-author-text">IT для меня не просто работа,<br> а увлечение.<br>Основной фокус на
+                        результате.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-container">
+            <h2 class="section-title">информация</h2>
+            <div class="about-grid">
+                <div class="about-card glass-panel full-width">
+                    <h3 class="card-title">обо мне</h3>
+                    <p class="card-desc">Привет, меня зовут Дима! Я начинающий разработчик и дизайнер из Владивостока.
+                        Интересуюсь разными направлениями и стремлюсь
+                        развиваться в создании удобных и качественных цифровых продуктов.</p>
+                </div>
+                <div class="about-card glass-panel">
+                    <h3 class="card-title">мои интересы</h3>
+                    <ul class="card-desc custom-list">
+                        <li>1. Разработка игр (UE5, Unity)</li>
+                        <li>2. Разработка сайтов</li>
+                        <li>3. Мобильная разработка</li>
+                        <li>4. Дизайн и 3D-графика</li>
+                    </ul>
+                </div>
+                <div class="about-card glass-panel">
+                    <h3 class="card-title">образование</h3>
+                    <ul class="card-desc custom-list">
+                        <li>1. ДВФУ - программная инженерия</li>
+                        <li>1.1 ДВФУ (переквалификация) - управление проектами <br>по разработке ИТ-продуктов</li>
+                        <li>2. ЗАБКИТ - дизайн и реклама</li>
+                        <li>3. ЗАБКИТ - мастер по ремонту ПК</li>
+                    </ul>
+                </div>
+                <div class="about-card glass-panel full-width">
+                    <h3 class="card-title">технологии</h3>
+                    <div class="tech-category">
+                        <h4 class="tech-category-title">Разработка</h4>
+                        <div class="tech-stack">
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">HTML/CSS</span>
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">C++</span>
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Flutter</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4 class="tech-category-title">Дизайн и искусство</h4>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Photoshop</span>
+                            <span class="tech-pill">Figma</span>
+                            <span class="tech-pill">Blender</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4 class="tech-category-title">Нейросети</h4>
+                        <div class="tech-stack">
+                            <span class="tech-pill">AntiGravity (Gemini, Claude)</span>
+                            <span class="tech-pill">Perplexity</span>
+                            <span class="tech-pill">ComfyUI (фото, видео, 3D)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section-container">
+            <h2 class="section-title">мои работы</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card glass-panel featured">
+                    <span class="project-case">01 кейс</span>
+                    <div class="project-image">
+                        <img src="images/MetaVerse.png" alt="MetaVerse">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">MetaVerse</h3>
+                        <p class="project-desc">Сайт-приглашение для записи на вебинар.</p>
+                        <a href="https://meta-verse-kappa.vercel.app/" class="project-link" target="_blank"
+                            rel="noopener noreferrer">смотреть проект ↗</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card glass-panel">
+                    <span class="project-case">02 кейс</span>
+                    <div class="project-image">
+                        <img src="images/Layered.png" alt="Layered">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Layered</h3>
+                        <p class="project-desc">Магазин для продажи одежды и аксессуаров </p>
+                        <a href="https://layerd-psi.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">смотреть проект ↗</a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card glass-panel">
+                    <span class="project-case">03 кейс</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1200&auto=format&fit=crop"
+                            alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Тут будет сайтик</h3>
+                        <p class="project-desc">...</p>
+                        <a href="#" class="project-link">смотреть проект ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section-container">
+            <div class="services-header">
+                <h2 class="section-title">услуги</h2>
+            </div>
+            <div class="services-list glass-panel">
+                <a href="#contact" class="service-item">
+                    <span class="service-name">Frontend Разработка</span>
+                    <span class="service-icon">↗</span>
+                </a>
+                <a href="#contact" class="service-item">
+                    <span class="service-name">Backend Архитектура</span>
+                    <span class="service-icon">↗</span>
+                </a>
+                <a href="#contact" class="service-item">
+                    <span class="service-name">UI/UX Интеграция</span>
+                    <span class="service-icon">↗</span>
+                </a>
+                <a href="#contact" class="service-item">
+                    <span class="service-name">Android/ios разработка</span>
+                    <span class="service-icon">↗</span>
+                </a>
+                <a href="#contact" class="service-item">
+                    <span class="service-name">Любые ваши задачи по согласованию</span>
+                    <span class="service-icon">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process section-container">
+            <h2 class="section-title">этапы работы</h2>
+            <div class="process-grid">
+                <div class="process-card-wrapper">
+                    <div class="process-card glass-panel">
+                        <div class="flip-card-front">
+                            <div class="process-step">01</div>
+                            <h3 class="process-title">Знакомство</h3>
+                            <p class="process-desc">Обсуждение идеи, сбор требований.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="process-title">Детали</h3>
+                            <p class="process-desc">Созвон, бриф, фиксация пожеланий и бизнес-целей.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-card-wrapper">
+                    <div class="process-card glass-panel">
+                        <div class="flip-card-front">
+                            <div class="process-step">02</div>
+                            <h3 class="process-title">Анализ</h3>
+                            <p class="process-desc">Проектирование архитектуры и подготовка ТЗ.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="process-title">Детали</h3>
+                            <p class="process-desc">Анализ требований, проектирование архитектуры решения и формирование
+                                технического задания.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-card-wrapper">
+                    <div class="process-card glass-panel">
+                        <div class="flip-card-front">
+                            <div class="process-step">03</div>
+                            <h3 class="process-title">Дизайн</h3>
+                            <p class="process-desc">Разработка дизайна для вашего продукта (при необходимости!).</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="process-title">Детали</h3>
+                            <p class="process-desc">Создание UI-кита, проектирование интерфейса.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-card-wrapper">
+                    <div class="process-card glass-panel">
+                        <div class="flip-card-front">
+                            <div class="process-step">04</div>
+                            <h3 class="process-title">Разработка</h3>
+                            <p class="process-desc">Написание оптимизированного кода.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="process-title">Детали</h3>
+                            <p class="process-desc">Разработка оптимизированного и
+                                поддерживаемого кода с учетом требований производительности, безопасности и
+                                масштабируемости.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-card-wrapper">
+                    <div class="process-card glass-panel">
+                        <div class="flip-card-front">
+                            <div class="process-step">05</div>
+                            <h3 class="process-title">Запуск</h3>
+                            <p class="process-desc">Тестирование, деплой и поддержка продукта.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="process-title">Детали</h3>
+                            <p class="process-desc">Проверки, выгрузка на сервер и передача проекта.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-container">
+            <h2 class="section-title">связь со мной</h2>
+            <div class="contact-card glass-panel">
+                <div class="contact-qr">
+                    <img src="images/QR-code.jpg" alt="QR Code" style="width: 150px; height: 150px; object-fit: cover;">
+                </div>
+                <div class="contact-info">
+                    <div class="contact-links">
+                        <div class="contact-item">
+                            <span class="contact-label">Почта:</span>
+                            <a href="mailto:abunaittt@gmail.com" class="contact-link" target="_blank"
+                                rel="noopener noreferrer">abunaittt@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Telegram:</span>
+                            <a href="https://t.me/ddddddddd_kkkkkkk" class="contact-link" target="_blank"
+                                rel="noopener noreferrer">@ddddddddd_kkkkkkk</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">GitHub:</span>
+                            <a href="https://github.com/LyaBBzzz" class="contact-link" target="_blank"
+                                rel="noopener noreferrer">github.com/LyaBBzzz</a>
+                        </div>
+                    </div>
+                    <div class="cta-container">
+                        <button class="cta-button" id="contact-cta">Позвонить</button>
+                        <div class="cta-dropdown" id="contact-dropdown">
+                            <a href="tel:+79242723257" class="phone-link">+7 (924) 272-32-57</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="images/img2.png" alt="Footer Element" class="footer-animated-image">
+            <p>© 2026 designed and developed by LyaBBzzz</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
