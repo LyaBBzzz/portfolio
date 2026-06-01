@@ -38,104 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Subtly parallax the 3D object on mouse move
-    const heroObject = document.querySelector('.hero-3d-object');
-    if (heroObject) {
-        let isTicking = false;
-        document.addEventListener('mousemove', (e) => {
-            if (!isTicking) {
-                window.requestAnimationFrame(() => {
-                    const x = (window.innerWidth / 2 - e.pageX) / 50;
-                    const y = (window.innerHeight / 2 - e.pageY) / 50;
-                    heroObject.style.transform = `translate(${x}px, ${y}px)`;
-                    isTicking = false;
-                });
-                isTicking = true;
-            }
-        });
-    }
-
-    // Network Canvas Animation
-    const canvas = document.getElementById('network-canvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(resize, 200);
-        });
-        resize();
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 1.5 + 0.5;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-                ctx.fill();
-            }
-        }
-        
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 15000), 120);
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-                
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 150) {
-                        const opacity = 1 - (distance / 150);
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.25})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-        
-        initParticles();
-        animate();
-    }
+    // Background dynamic effects removed as per user request
 
     // Typewriter Effect for Hero Title
     const typewriterTitle = document.getElementById('typewriter-title');
@@ -172,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typewriterTitle.style.visibility = 'visible';
 
         let currentIndex = 0;
-        const typeSpeed = 120; // ms per letter
+        const typeSpeed = 40; // ms per letter (faster)
 
         function revealNext() {
             if (currentIndex < leftLetters.length) {
@@ -198,23 +101,97 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(revealNext, 300); // Start delay
     }
 
-    // Contact CTA Dropdown
-    const contactCta = document.getElementById('contact-cta');
-    const contactDropdown = document.getElementById('contact-dropdown');
-    
-    if (contactCta && contactDropdown) {
-        contactCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            contactDropdown.classList.toggle('show');
-        });
+
+    // Real-time local clock (GMT+10)
+    function initLocalClock() {
+        const pad = (num) => String(num).padStart(2, '0');
+        const clockEl = document.getElementById('local-clock');
+        if (!clockEl) return;
         
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!contactCta.contains(e.target) && !contactDropdown.contains(e.target)) {
-                contactDropdown.classList.remove('show');
-            }
+        function tick() {
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const devTime = new Date(utc + (3600000 * 10)); // UTC+10
+            clockEl.textContent = `${pad(devTime.getHours())}:${pad(devTime.getMinutes())}:${pad(devTime.getSeconds())}`;
+        }
+        setInterval(tick, 1000);
+        tick();
+    }
+    initLocalClock();
+
+    // Music player removed as per user request
+
+    // Terminal Chips Selection
+    function initTerminalChips() {
+        const chips = document.querySelectorAll('.topic-chip');
+        const subjectInput = document.getElementById('terminal-subject');
+        if (!subjectInput) return;
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                subjectInput.value = chip.getAttribute('data-topic');
+            });
         });
     }
+    initTerminalChips();
+
+    // Interactive Terminal Form Submission Logs
+    function initTerminalForm() {
+        const form = document.getElementById('terminal-form');
+        const statusOutput = document.getElementById('terminal-status-output');
+        const submitBtn = form?.querySelector('.terminal-submit-btn');
+        if (!form || !statusOutput || !submitBtn) return;
+
+        function appendLog(text, delay) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    const line = document.createElement('div');
+                    line.className = 'status-log-line';
+                    line.textContent = `>> ${text}`;
+                    statusOutput.appendChild(line);
+                    statusOutput.scrollTop = statusOutput.scrollHeight;
+                    resolve();
+                }, delay);
+            });
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            statusOutput.innerHTML = '';
+            
+            await appendLog('visitor@kdv:~$ post-message --send', 100);
+            await appendLog('[STATUS] Establishing connection with kdvttt@gmail.com...', 500);
+            await appendLog('[STATUS] Resolving secure payload...', 600);
+            await appendLog('[STATUS] Dispatching packet metadata...', 600);
+            
+            // Perform actual background formspree send
+            const data = new FormData(form);
+            data.append('subject_topic', document.getElementById('terminal-subject').value);
+            
+            try {
+                const response = await fetch('https://formspree.io/f/xdajvpba', {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    await appendLog('[SUCCESS] Message successfully delivered. 200 OK', 400);
+                    form.reset();
+                } else {
+                    await appendLog('[ERROR] Transmission failed. Fallback to direct mailto.', 400);
+                }
+            } catch (err) {
+                await appendLog('[ERROR] Connection interrupted. Simulated sending complete.', 400);
+            }
+            
+            submitBtn.disabled = false;
+        });
+    }
+    initTerminalForm();
 
     // Process Cards Flip Logic
     const processCards = document.querySelectorAll('.process-card-wrapper');

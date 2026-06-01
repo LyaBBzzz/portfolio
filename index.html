@@ -18,15 +18,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <!-- Background Elements -->
-    <canvas id="network-canvas"></canvas>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
+    <div class="ambient-bg-container">
+        <div class="ambient-glow ambient-glow-1"></div>
+        <div class="ambient-glow ambient-glow-2"></div>
+        <div class="ambient-glow ambient-glow-3"></div>
+    </div>
 
     <nav class="navbar">
         <div class="nav-pills">
@@ -38,83 +40,193 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero">
+        <section id="hero" class="hero section-container">
             <div class="hero-title-container">
-                <h1 class="hero-title" id="typewriter-title">
-                    <span class="title-left">PORT</span>
-                    <img src="images/IMG.png" alt="3D Chrome Object" class="hero-3d-object">
-                    <span class="title-right">FOLIO</span>
+                <h1 class="hero-title">
+                    <span class="title-text">PORT</span>
+                    <div class="title-video-wrapper">
+                        <video src="images/vid.mp4" autoplay loop muted playsinline class="title-video"></video>
+                    </div>
+                    <span class="title-text">FOLIO</span>
                 </h1>
             </div>
-            <div class="hero-author-card glass-panel">
-                <img src="images/Photo.png" alt="Климанов Дмитрий" class="hero-author-photo">
-                <div class="hero-author-info">
-                    <h2 class="hero-author-name">Климанов Дмитрий</h2>
-                    <h3 class="hero-author-role">Разработчик</h3>
-                    <p class="hero-author-text">IT для меня не просто работа,<br> а увлечение.<br>Основной фокус на
-                        результате.</p>
+            <div class="terminal-card glass-panel refractive full-width-console">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control expand"></span>
+                    </div>
+                    <span class="terminal-title">visitor@kdv: ~ — neofetch</span>
+                </div>
+                <div class="terminal-body console-hero-layout">
+                    <!-- Column 1: System specs -->
+                    <div class="console-specs-panel">
+                        <div class="terminal-line text-success typewriter-line">
+                            <span class="prompt">visitor@kdv:~$</span> <span class="cmd" id="typewriter-title">
+                                <span class="title-left">KLIMANOV</span><span class="title-right">_DEV</span>
+                            </span>
+                        </div>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">ПОЛЬЗОВАТЕЛЬ:</span>
+                                <span class="spec-value">Климанов Дмитрий</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">РОЛЬ:</span>
+                                <span class="spec-value">Разработчик // Дизайнер</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">ЛОКАЦИЯ:</span>
+                                <span class="spec-value">Владивосток, RU (GMT+10)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">ИНТЕРЕСЫ:</span>
+                                <span class="spec-value">Геймдев, Веб, Мобильные приложения, UI/UX</span>
+                            </div>
+                        </div>
+                        <div class="terminal-line input-line cmd-choices">
+                            <span class="prompt">visitor@kdv:~$</span> <span class="text-info">explore --target=</span>
+                            <div class="hero-console-links">
+                                <a href="#about" class="console-link">./about</a>
+                                <a href="#projects" class="console-link">./projects</a>
+                                <a href="#contact" class="console-link">./contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 2: Photo -->
+                    <div class="console-photo-panel">
+                        <img src="images/Photo.png" alt="Климанов Дмитрий" class="console-avatar-img">
+                        <div class="avatar-status-overlay">
+                            <span class="status-indicator-dot online"></span>
+                            <span class="status-label">SYS_ACTIVE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="about section-container">
-            <h2 class="section-title">информация</h2>
+            <h2 class="section-title">информация // about_</h2>
             <div class="about-grid">
-                <div class="about-card glass-panel full-width">
-                    <h3 class="card-title">обо мне</h3>
-                    <p class="card-desc">Привет, меня зовут Дима! Я начинающий разработчик и дизайнер из Владивостока.
-                        Интересуюсь разными направлениями и стремлюсь
-                        развиваться в создании удобных и качественных цифровых продуктов.</p>
+                <!-- Card 1: Bio -->
+                <div class="terminal-card glass-panel refractive full-width">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/about/bio.txt — обо мне</span>
+                    </div>
+                    <div class="terminal-body bio-body">
+                        <p class="card-desc mono-text bio-text">> Привет, меня зовут Дима! Я начинающий разработчик и
+                            дизайнер из Владивостока.<br>> Интересуюсь разными направлениями и стремлюсь развиваться в
+                            создании удобных и качественных цифровых продуктов.</p>
+                    </div>
                 </div>
-                <div class="about-card glass-panel">
-                    <h3 class="card-title">мои интересы</h3>
-                    <ul class="card-desc custom-list">
-                        <li>1. Разработка игр (UE5, Unity)</li>
-                        <li>2. Разработка сайтов</li>
-                        <li>3. Мобильная разработка</li>
-                        <li>4. Дизайн и 3D-графика</li>
-                    </ul>
-                </div>
-                <div class="about-card glass-panel">
-                    <h3 class="card-title">образование</h3>
-                    <ul class="card-desc custom-list">
-                        <li>1. ДВФУ - программная инженерия</li>
-                        <li>1.1 ДВФУ (переквалификация) - управление проектами <br>по разработке ИТ-продуктов</li>
-                        <li>2. ЗАБКИТ - дизайн и реклама</li>
-                        <li>3. ЗАБКИТ - мастер по ремонту ПК</li>
-                    </ul>
-                </div>
-                <div class="about-card glass-panel full-width">
-                    <h3 class="card-title">технологии</h3>
-                    <div class="tech-category">
-                        <h4 class="tech-category-title">Разработка</h4>
-                        <div class="tech-stack">
-                            <span class="tech-pill">JavaScript</span>
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Node.js</span>
-                            <span class="tech-pill">HTML/CSS</span>
-                            <span class="tech-pill">C#</span>
-                            <span class="tech-pill">C++</span>
-                            <span class="tech-pill">Java</span>
-                            <span class="tech-pill">Flutter</span>
+
+                <!-- Card 2: Interests -->
+                <div class="terminal-card glass-panel refractive">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/about/interests.json — интересы</span>
+                    </div>
+                    <div class="terminal-body json-body">
+                        <div class="json-block mono-text">
+                            <div class="json-line"><span class="json-punct">{</span></div>
+                            <div class="json-line indent-1"><span class="json-key">"interests"</span><span
+                                    class="json-punct">: [</span></div>
+                            <div class="json-line indent-2"><span class="json-string">"Разработка игр (UE5,
+                                    Unity)"</span><span class="json-punct">,</span></div>
+                            <div class="json-line indent-2"><span class="json-string">"Разработка сайтов"</span><span
+                                    class="json-punct">,</span></div>
+                            <div class="json-line indent-2"><span class="json-string">"Мобильная разработка"</span><span
+                                    class="json-punct">,</span></div>
+                            <div class="json-line indent-2"><span class="json-string">"Дизайн и 3D-графика"</span></div>
+                            <div class="json-line indent-1"><span class="json-punct">]</span></div>
+                            <div class="json-line"><span class="json-punct">}</span></div>
                         </div>
                     </div>
-                    <div class="tech-category">
-                        <h4 class="tech-category-title">Дизайн и искусство</h4>
-                        <div class="tech-stack">
-                            <span class="tech-pill">Photoshop</span>
-                            <span class="tech-pill">Figma</span>
-                            <span class="tech-pill">Blender</span>
+                </div>
+
+                <!-- Card 3: Education -->
+                <div class="terminal-card glass-panel refractive">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/about/education.log — образование</span>
+                    </div>
+                    <div class="terminal-body log-body">
+                        <div class="log-block mono-text">
+                            <div class="log-entry"><span class="log-time">[2022-2026]</span> <span
+                                    class="log-level info">INFO</span> <span class="log-msg">ДВФУ - программная
+                                    инженерия</span> <span class="log-status success">[OK]</span></div>
+                            <div class="log-entry"><span class="log-time">[2023-2024]</span> <span
+                                    class="log-level info">INFO</span> <span class="log-msg">ДВФУ (переквалификация) -
+                                    управление проектами
+                                    по разработке ИТ-продуктов</span> <span class="log-status success">[OK]</span></div>
+                            <div class="log-entry"><span class="log-time">[2018-2022]</span> <span
+                                    class="log-level info">INFO</span> <span class="log-msg">ЗАБКИТ - дизайн и
+                                    реклама</span> <span class="log-status success">[OK]</span></div>
+                            <div class="log-entry"><span class="log-time">[2021-2021]</span> <span
+                                    class="log-level info">INFO</span> <span class="log-msg">ЗАБКИТ - мастер по ремонту
+                                    ПК</span> <span class="log-status success">[OK]</span></div>
+                            <div class="log-entry"><span class="log-time">[SYS_WAIT]</span> <span
+                                    class="log-level warn">WARN</span> <span class="log-msg">Awaiting new
+                                    records...</span></div>
                         </div>
                     </div>
-                    <div class="tech-category">
-                        <h4 class="tech-category-title">Нейросети</h4>
-                        <div class="tech-stack">
-                            <span class="tech-pill">Gemini</span>
-                            <span class="tech-pill">Claude</span>
-                            <span class="tech-pill">Perplexity</span>
-                            <span class="tech-pill">ComfyUI (фото, видео, 3D)</span>
+                </div>
+
+                <!-- Card 4: Tech stack -->
+                <div class="terminal-card glass-panel refractive full-width">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/about/tech_stack.sh — технологии</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="tech-category">
+                            <h4 class="tech-category-title mono-text">> Разработка:</h4>
+                            <div class="tech-stack">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">HTML/CSS</span>
+                                <span class="tech-pill">C#</span>
+                                <span class="tech-pill">C++</span>
+                                <span class="tech-pill">Java</span>
+                                <span class="tech-pill">Flutter</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4 class="tech-category-title mono-text">> Дизайн и искусство:</h4>
+                            <div class="tech-stack">
+                                <span class="tech-pill">Photoshop</span>
+                                <span class="tech-pill">Figma</span>
+                                <span class="tech-pill">Blender</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4 class="tech-category-title mono-text">> Нейросети:</h4>
+                            <div class="tech-stack">
+                                <span class="tech-pill">Gemini</span>
+                                <span class="tech-pill">Claude</span>
+                                <span class="tech-pill">Perplexity</span>
+                                <span class="tech-pill">ComfyUI (фото, видео, 3D)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,53 +235,80 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects section-container">
-            <h2 class="section-title">мои работы</h2>
+            <h2 class="section-title">мои работы // projects_</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article class="project-card glass-panel featured">
-                    <span class="project-case">01 кейс</span>
-                    <div class="project-image">
-                        <a href="https://meta-verse-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <img src="images/MetaVerse.png" alt="MetaVerse" loading="lazy">
-                        </a>
+                <article class="terminal-card glass-panel refractive project-card featured">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/projects/01_metaverse.app — проект</span>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">MetaVerse</h3>
-                        <p class="project-desc">Сайт-приглашение для записи на вебинар.</p>
-                        <a href="https://meta-verse-kappa.vercel.app/" class="project-link" target="_blank"
-                            rel="noopener noreferrer">смотреть проект ↗</a>
+                    <div class="terminal-body project-body">
+                        <div class="project-image">
+                            <a href="https://meta-verse-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/MetaVerse.png" alt="MetaVerse" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title mono-text">> MetaVerse</h3>
+                            <p class="project-desc mono-text">Сайт-приглашение для записи на вебинар.</p>
+                            <a href="https://meta-verse-kappa.vercel.app/" class="project-link mono-text"
+                                target="_blank" rel="noopener noreferrer">execute_deploy ↗</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project-card glass-panel">
-                    <span class="project-case">02 кейс</span>
-                    <div class="project-image">
-                        <a href="https://layerd-psi.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <img src="images/Layered.png" alt="Layered" loading="lazy">
-                        </a>
+                <article class="terminal-card glass-panel refractive project-card">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/projects/02_layered.app — проект</span>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Layered</h3>
-                        <p class="project-desc">Магазин для продажи одежды и аксессуаров </p>
-                        <a href="https://layerd-psi.vercel.app/" class="project-link" target="_blank"
-                            rel="noopener noreferrer">смотреть проект ↗</a>
+                    <div class="terminal-body project-body">
+                        <div class="project-image">
+                            <a href="https://layerd-psi.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Layered.png" alt="Layered" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title mono-text">> Layered</h3>
+                            <p class="project-desc mono-text">Магазин для продажи одежды и аксессуаров.</p>
+                            <a href="https://layerd-psi.vercel.app/" class="project-link mono-text" target="_blank"
+                                rel="noopener noreferrer">execute_deploy ↗</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 3 -->
-                <article class="project-card glass-panel">
-                    <span class="project-case">03 кейс</span>
-                    <div class="project-image">
-                        <a href="https://tlou-hub.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <img src="images/TlouHUB.png" alt="TlouHub" loading="lazy">
-                        </a>
+                <article class="terminal-card glass-panel refractive project-card">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">~/klimanov/projects/03_tlouhub.app — проект</span>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">TlouHub</h3>
-                        <p class="project-desc">Фан-сайт сериала The last of us</p>
-                        <a href="https://tlou-hub.vercel.app/" class="project-link" target="_blank"
-                            rel="noopener noreferrer">смотреть проект ↗</a>
+                    <div class="terminal-body project-body">
+                        <div class="project-image">
+                            <a href="https://tlou-hub.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/TlouHUB.png" alt="TlouHub" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title mono-text">> TlouHub</h3>
+                            <p class="project-desc mono-text">Фан-сайт сериала The Last of Us.</p>
+                            <a href="https://tlou-hub.vercel.app/" class="project-link mono-text" target="_blank"
+                                rel="noopener noreferrer">execute_deploy ↗</a>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -177,102 +316,198 @@
 
         <!-- Services Section -->
         <section id="services" class="services section-container">
-            <div class="services-header">
-                <h2 class="section-title">услуги</h2>
-            </div>
-            <div class="services-list glass-panel">
-                <a href="#contact" class="service-item">
-                    <span class="service-name">Frontend Разработка</span>
-                    <span class="service-icon">↗</span>
-                </a>
-                <a href="#contact" class="service-item">
-                    <span class="service-name">Backend Архитектура</span>
-                    <span class="service-icon">↗</span>
-                </a>
-                <a href="#contact" class="service-item">
-                    <span class="service-name">UI/UX Интеграция</span>
-                    <span class="service-icon">↗</span>
-                </a>
-                <a href="#contact" class="service-item">
-                    <span class="service-name">Android разработка</span>
-                    <span class="service-icon">↗</span>
-                </a>
-                <a href="#contact" class="service-item">
-                    <span class="service-name">Любые ваши задачи по согласованию</span>
-                    <span class="service-icon">↗</span>
-                </a>
+            <h2 class="section-title">услуги // services_</h2>
+            <div class="terminal-card glass-panel refractive full-width">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control expand"></span>
+                    </div>
+                    <span class="terminal-title">~/klimanov/services/list_services.sh — услуги</span>
+                </div>
+                <div class="terminal-body services-console-body">
+                    <div class="terminal-line text-muted">
+                        <span class="prompt">visitor@kdv:~$</span> <span class="cmd">./list_services.sh --all</span>
+                    </div>
+                    <div class="services-list-console">
+                        <a href="#contact" class="service-console-item" style="--item-idx: 1;">
+                            <div class="service-console-prefix">
+                                <span class="service-console-index">01</span>
+                                <span class="service-console-hex">sys.req</span>
+                            </div>
+                            <span class="service-console-name">Frontend Разработка</span>
+                            <span class="service-console-line"></span>
+                            <span class="service-console-status text-success">[ACTIVE]</span>
+                            <span class="service-console-link">↗</span>
+                        </a>
+                        <a href="#contact" class="service-console-item" style="--item-idx: 2;">
+                            <div class="service-console-prefix">
+                                <span class="service-console-index">02</span>
+                                <span class="service-console-hex">sys.api</span>
+                            </div>
+                            <span class="service-console-name">Backend Архитектура</span>
+                            <span class="service-console-line"></span>
+                            <span class="service-console-status text-success">[ACTIVE]</span>
+                            <span class="service-console-link">↗</span>
+                        </a>
+                        <a href="#contact" class="service-console-item" style="--item-idx: 3;">
+                            <div class="service-console-prefix">
+                                <span class="service-console-index">03</span>
+                                <span class="service-console-hex">sys.gui</span>
+                            </div>
+                            <span class="service-console-name">UI/UX Интеграция</span>
+                            <span class="service-console-line"></span>
+                            <span class="service-console-status text-success">[ACTIVE]</span>
+                            <span class="service-console-link">↗</span>
+                        </a>
+                        <a href="#contact" class="service-console-item" style="--item-idx: 4;">
+                            <div class="service-console-prefix">
+                                <span class="service-console-index">04</span>
+                                <span class="service-console-hex">sys.apk</span>
+                            </div>
+                            <span class="service-console-name">Android Разработка</span>
+                            <span class="service-console-line"></span>
+                            <span class="service-console-status text-success">[ACTIVE]</span>
+                            <span class="service-console-link">↗</span>
+                        </a>
+                        <a href="#contact" class="service-console-item" style="--item-idx: 5;">
+                            <div class="service-console-prefix">
+                                <span class="service-console-index">05</span>
+                                <span class="service-console-hex">sys.any</span>
+                            </div>
+                            <span class="service-console-name">Любые кастомные задачи</span>
+                            <span class="service-console-line"></span>
+                            <span class="service-console-status text-success">[ACTIVE]</span>
+                            <span class="service-console-link">↗</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Process Section -->
         <section id="process" class="process section-container">
-            <h2 class="section-title">этапы работы</h2>
+            <h2 class="section-title">этапы работы // process_</h2>
             <div class="process-grid">
+                <!-- Step 1 -->
                 <div class="process-card-wrapper">
-                    <div class="process-card glass-panel">
-                        <div class="flip-card-front">
-                            <div class="process-step">01</div>
-                            <h3 class="process-title">Знакомство</h3>
-                            <p class="process-desc">Обсуждение идеи, сбор требований.</p>
+                    <div class="terminal-card process-card glass-panel refractive">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control expand"></span>
+                            </div>
+                            <span class="terminal-title">~/process/step_01.sh</span>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="process-title">Детали</h3>
-                            <p class="process-desc">Созвон, бриф, фиксация пожеланий и бизнес-целей.</p>
+                        <div class="terminal-body flip-card-front">
+                            <h3 class="process-title mono-text">> Знакомство</h3>
+                            <p class="process-desc mono-text">Обсуждение идеи, сбор требований.</p>
+                            <span class="flip-hint">[click for details]</span>
+                        </div>
+                        <div class="terminal-body flip-card-back">
+                            <h3 class="process-title mono-text">> Детали</h3>
+                            <p class="process-desc mono-text">Созвон, бриф, фиксация пожеланий и бизнес-целей.</p>
+                            <span class="flip-hint">[click to back]</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 2 -->
                 <div class="process-card-wrapper">
-                    <div class="process-card glass-panel">
-                        <div class="flip-card-front">
-                            <div class="process-step">02</div>
-                            <h3 class="process-title">Анализ</h3>
-                            <p class="process-desc">Проектирование архитектуры и подготовка ТЗ.</p>
+                    <div class="terminal-card process-card glass-panel refractive">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control expand"></span>
+                            </div>
+                            <span class="terminal-title">~/process/step_02.sh</span>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="process-title">Детали</h3>
-                            <p class="process-desc">Анализ требований, проектирование архитектуры решения и формирование
-                                технического задания.</p>
+                        <div class="terminal-body flip-card-front">
+                            <h3 class="process-title mono-text">> Анализ</h3>
+                            <p class="process-desc mono-text">Проектирование архитектуры и подготовка ТЗ.</p>
+                            <span class="flip-hint">[click for details]</span>
+                        </div>
+                        <div class="terminal-body flip-card-back">
+                            <h3 class="process-title mono-text">> Детали</h3>
+                            <p class="process-desc mono-text">Анализ требований, проектирование архитектуры решения и
+                                формирование технического задания.</p>
+                            <span class="flip-hint">[click to back]</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 3 -->
                 <div class="process-card-wrapper">
-                    <div class="process-card glass-panel">
-                        <div class="flip-card-front">
-                            <div class="process-step">03</div>
-                            <h3 class="process-title">Дизайн</h3>
-                            <p class="process-desc">Разработка дизайна для вашего продукта (при необходимости!).</p>
+                    <div class="terminal-card process-card glass-panel refractive">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control expand"></span>
+                            </div>
+                            <span class="terminal-title">~/process/step_03.sh</span>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="process-title">Детали</h3>
-                            <p class="process-desc">Создание UI-кита, проектирование интерфейса.</p>
+                        <div class="terminal-body flip-card-front">
+                            <h3 class="process-title mono-text">> Дизайн</h3>
+                            <p class="process-desc mono-text">Разработка дизайна для вашего продукта.</p>
+                            <span class="flip-hint">[click for details]</span>
+                        </div>
+                        <div class="terminal-body flip-card-back">
+                            <h3 class="process-title mono-text">> Детали</h3>
+                            <p class="process-desc mono-text">Создание UI-кита, проектирование интерфейса.</p>
+                            <span class="flip-hint">[click to back]</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 4 -->
                 <div class="process-card-wrapper">
-                    <div class="process-card glass-panel">
-                        <div class="flip-card-front">
-                            <div class="process-step">04</div>
-                            <h3 class="process-title">Разработка</h3>
-                            <p class="process-desc">Написание оптимизированного кода.</p>
+                    <div class="terminal-card process-card glass-panel refractive">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control expand"></span>
+                            </div>
+                            <span class="terminal-title">~/process/step_04.sh</span>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="process-title">Детали</h3>
-                            <p class="process-desc">Разработка оптимизированного и
-                                поддерживаемого кода с учетом требований производительности, безопасности и
-                                масштабируемости.</p>
+                        <div class="terminal-body flip-card-front">
+                            <h3 class="process-title mono-text">> Разработка</h3>
+                            <p class="process-desc mono-text">Написание оптимизированного кода.</p>
+                            <span class="flip-hint">[click for details]</span>
+                        </div>
+                        <div class="terminal-body flip-card-back">
+                            <h3 class="process-title mono-text">> Детали</h3>
+                            <p class="process-desc mono-text">Разработка оптимизированного и поддерживаемого кода с
+                                учетом требований производительности, безопасности и масштабируемости.</p>
+                            <span class="flip-hint">[click to back]</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 5 -->
                 <div class="process-card-wrapper">
-                    <div class="process-card glass-panel">
-                        <div class="flip-card-front">
-                            <div class="process-step">05</div>
-                            <h3 class="process-title">Запуск</h3>
-                            <p class="process-desc">Тестирование, деплой и поддержка продукта.</p>
+                    <div class="terminal-card process-card glass-panel refractive">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control expand"></span>
+                            </div>
+                            <span class="terminal-title">~/process/step_05.sh</span>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="process-title">Детали</h3>
-                            <p class="process-desc">Проверки, выгрузка на сервер и передача проекта.</p>
+                        <div class="terminal-body flip-card-front">
+                            <h3 class="process-title mono-text">> Запуск</h3>
+                            <p class="process-desc mono-text">Тестирование, деплой и поддержка.</p>
+                            <span class="flip-hint">[click for details]</span>
+                        </div>
+                        <div class="terminal-body flip-card-back">
+                            <h3 class="process-title mono-text">> Детали</h3>
+                            <p class="process-desc mono-text">Проверки, выгрузка на сервер и передача проекта.</p>
+                            <span class="flip-hint">[click to back]</span>
                         </div>
                     </div>
                 </div>
@@ -281,35 +516,106 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact section-container">
-            <h2 class="section-title">связь со мной</h2>
-            <div class="contact-card glass-panel">
-                <div class="contact-qr">
-                    <img src="images/QR-code.jpg" alt="QR Code" style="width: 150px; height: 150px; object-fit: cover;"
-                        loading="lazy">
+            <h2 class="section-title">связь со мной // contact_</h2>
+            <div class="contact-layout">
+                <!-- Left Column: Terminal Card -->
+                <div class="terminal-card glass-panel refractive">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control expand"></span>
+                        </div>
+                        <span class="terminal-title">kdvttt@gmail.com — связь</span>
+                    </div>
+                    <form class="terminal-body" id="terminal-form">
+                        <div class="terminal-line text-muted">
+                            <span class="prompt">visitor@kdv:~$</span> <span class="cmd">send-message
+                                --select-topic</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="text-info">[выберите тему]:</span>
+                            <div class="topic-chips">
+                                <button type="button" class="topic-chip active"
+                                    data-topic="cooperation">#сотрудничество</button>
+                                <button type="button" class="topic-chip" data-topic="project">#проект</button>
+                                <button type="button" class="topic-chip" data-topic="question">#быстрый_вопрос</button>
+                            </div>
+                            <input type="hidden" name="subject" id="terminal-subject" value="cooperation">
+                        </div>
+                        <div class="terminal-line input-line">
+                            <label for="terminal-email" class="input-label"><span class="prompt">visitor@kdv:~$</span>
+                                email_address =</label>
+                            <span class="text-info">[введите почту]:</span>
+                            <input type="email" name="_replyto" id="terminal-email" class="terminal-input"
+                                placeholder="your_email@domain.com" required autocomplete="off">
+                        </div>
+                        <div class="terminal-line input-line">
+                            <label for="terminal-message" class="input-label"><span class="prompt">visitor@kdv:~$</span>
+                                message_text =</label>
+                            <span class="text-info">[введите сообщение]:</span>
+                            <textarea name="message" id="terminal-message" class="terminal-input"
+                                placeholder="Write your message here..." required rows="3"
+                                autocomplete="off"></textarea>
+                        </div>
+                        <div class="terminal-line">
+                            <button type="submit" class="terminal-submit-btn">
+                                <span class="btn-text">[ОТПРАВИТЬ]</span>
+                                <span class="btn-spinner hidden"></span>
+                            </button>
+                        </div>
+                        <div id="terminal-status-output" class="terminal-status-output text-muted"></div>
+                    </form>
                 </div>
-                <div class="contact-info">
-                    <div class="contact-links">
-                        <div class="contact-item">
-                            <span class="contact-label">Почта:</span>
-                            <a href="mailto:abunaittt@gmail.com" class="contact-link" target="_blank"
-                                rel="noopener noreferrer">abunaittt@gmail.com</a>
+
+                <!-- Right Column: Bento Live widgets -->
+                <div class="live-bento-grid">
+                    <!-- Widget 1: Clock & Location -->
+                    <div class="live-card clock-card glass-panel refractive">
+                        <div class="widget-header">
+                            <span class="widget-title">локальное время // local_time</span>
+                            <span class="live-indicator">LIVE</span>
                         </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Telegram:</span>
-                            <a href="https://t.me/ddddddddd_kkkkkkk" class="contact-link" target="_blank"
-                                rel="noopener noreferrer">@ddddddddd_kkkkkkk</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">GitHub:</span>
-                            <a href="https://github.com/LyaBBzzz" class="contact-link" target="_blank"
-                                rel="noopener noreferrer">github.com/LyaBBzzz</a>
+                        <div class="clock-display" id="local-clock">19:50:00</div>
+                        <div class="location-details">
+                            <span class="location-text">Владивосток, Россия (GMT+10)</span>
+                            <div class="location-status">
+                                <span class="status-indicator-dot online"></span>
+                                <span class="status-desc">на связи</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="cta-container">
-                        <button class="cta-button" id="contact-cta">Позвонить</button>
-                        <div class="cta-dropdown" id="contact-dropdown">
-                            <a href="tel:+79242723257" class="phone-link">+7 (924) 272-32-57</a>
+
+
+                    <!-- Widget 3: Social Contacts & Phone -->
+                    <div class="live-card socials-card glass-panel refractive">
+                        <div class="socials-list">
+                            <a href="https://t.me/ddddddddd_kkkkkkk" target="_blank" rel="noopener noreferrer"
+                                class="social-bento-link">
+                                <span class="social-icon">TG</span>
+                                <span class="social-handle">@ddddddddd_kkkkkkk</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
+                            <a href="https://github.com/LyaBBzzz" target="_blank" rel="noopener noreferrer"
+                                class="social-bento-link">
+                                <span class="social-icon">GH</span>
+                                <span class="social-handle">github.com/LyaBBzzz</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
+                            <a href="tel:+79242723257" class="social-bento-link">
+                                <span class="social-icon">PH</span>
+                                <span class="social-handle">+7 (924) 272-32-57</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
                         </div>
+                    </div>
+
+                    <!-- Widget 4: Quick QR Contact -->
+                    <div class="live-card qr-card glass-panel refractive">
+                        <div class="qr-glow-container">
+                            <img src="images/QR-code.jpg" alt="Telegram QR" class="qr-image" loading="lazy">
+                        </div>
+                        <span class="qr-caption">быстрый контакт в tg</span>
                     </div>
                 </div>
             </div>
@@ -317,12 +623,25 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <img src="images/IMG2.png" alt="Footer Element" class="footer-animated-image" loading="lazy">
-            <p>© 2026 designed and developed by Klimanov D.</p>
+        <div class="footer-main">
+            <div class="footer-info-vertical">
+                <div class="footer-col system-status">
+                    <span class="status-pulse-dot"></span>
+                    <span class="status-label">SYS_STATUS: ONLINE // UPTIME: 99.98%</span>
+                </div>
+                <span class="version-label">RELEASE: v2.4.0</span>
+                <span class="copyright-label">© 2026 KLIMANOV_D</span>
+            </div>
+            <div class="footer-video-container">
+                <video src="images/vid2.mp4" autoplay loop muted playsinline class="footer-video"></video>
+            </div>
+            <div class="footer-nav-vertical">
+                <a href="#about" class="nav-code">./about</a>
+                <a href="#projects" class="nav-code">./projects</a>
+                <a href="#contact" class="nav-code">./contact</a>
+            </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
